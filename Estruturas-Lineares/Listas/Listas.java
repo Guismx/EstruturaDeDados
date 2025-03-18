@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 class Concessionaria {
-
+    
     // Classe Carro representando um carro
     static class Carro {
         String modelo;
@@ -32,9 +32,7 @@ class Concessionaria {
     static List<Carro> listaCarros = new ArrayList<>();
 
     // Método para adicionar um carro à lista
-    public static void adicionarCarro() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void adicionarCarro(Scanner scanner) {
         // Solicitando os dados do carro ao usuário
         System.out.print("Digite o modelo do carro: ");
         String modelo = scanner.nextLine();
@@ -54,16 +52,14 @@ class Concessionaria {
     }
 
     // Método para remover um carro da lista
-    public static void removerCarro() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void removerCarro(Scanner scanner) {
         // Solicita ao usuário o modelo do carro que deseja remover
         System.out.print("Digite o modelo do carro que deseja remover: ");
         String modelo = scanner.nextLine();
 
         // Variável para verificar se o carro foi removido com sucesso
         boolean removido = false;
-
+        
         // Itera sobre a lista de carros para encontrar e remover o carro correspondente ao modelo informado
         for (int i = 0; i < listaCarros.size(); i++) { // Aqui estamos percorrendo a lista
             if (listaCarros.get(i).modelo.equalsIgnoreCase(modelo)) { // Verifica se o modelo do carro corresponde
@@ -95,16 +91,14 @@ class Concessionaria {
     }
 
     // Método para consultar um carro específico
-    public static void consultarCarro() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void consultarCarro(Scanner scanner) {
         // Solicita ao usuário o modelo do carro a ser consultado
         System.out.print("Digite o modelo do carro que deseja consultar: ");
         String modelo = scanner.nextLine();
 
         // Variável para verificar se o carro foi encontrado na lista
         boolean encontrado = false;
-
+        
         // Itera sobre a lista para procurar o carro pelo modelo
         for (Carro carro : listaCarros) { // Aqui estamos percorrendo a lista para encontrar o carro
             if (carro.modelo.equalsIgnoreCase(modelo)) {
@@ -121,7 +115,7 @@ class Concessionaria {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);  // Instanciando o Scanner para ler entradas do usuário
 
         int opcao;
         do {
@@ -140,16 +134,16 @@ class Concessionaria {
             // Ações de acordo com a opção escolhida
             switch (opcao) {
                 case 1:
-                    adicionarCarro(); // Chama o método para adicionar um carro
+                    adicionarCarro(scanner); // Chama o método para adicionar um carro
                     break;
                 case 2:
-                    removerCarro(); // Chama o método para remover um carro
+                    removerCarro(scanner); // Chama o método para remover um carro
                     break;
                 case 3:
                     listarCarros(); // Chama o método para listar os carros disponíveis
                     break;
                 case 4:
-                    consultarCarro(); // Chama o método para consultar um carro específico
+                    consultarCarro(scanner); // Chama o método para consultar um carro específico
                     break;
                 case 5:
                     System.out.println("Saindo..."); // Finaliza o programa
@@ -159,5 +153,8 @@ class Concessionaria {
                     break;
             }
         } while (opcao != 5); // O menu se repete até o usuário escolher sair
+
+        // Fechar o scanner para evitar vazamento de recursos
+        scanner.close();  // Fechando o Scanner após a execução do programa
     }
 }

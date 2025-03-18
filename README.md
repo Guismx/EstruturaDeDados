@@ -19,28 +19,28 @@ Este repositório contém exemplos práticos e explicações sobre estruturas de
 ├── 📂 Conceitos-Fundamentais
 │   ├── 📂 Alocação-Estática
 │   │   ├── 📄 README.md
-│   │   ├── 📄 ExemploEstatico.java
+│   │   ├── 📄 AlocacaoEstatica.java
 │   │
 │   ├── 📂 Alocação-Dinâmica
 │       ├── 📄 README.md
-│       ├── 📄 ExemploDinamico.java
+│       ├── 📄 AlocacaoDinamica.java
 │
 ├── 📂 Estruturas-Lineares
 │   ├── 📂 Listas
 │   │   ├── 📄 README.md
-│   │   ├── 📄 ListaExemplo.java
+│   │   ├── 📄 Listas.java
 │   │
 │   ├── 📂 Filas
 │   │   ├── 📄 README.md
-│   │   ├── 📄 FilaExemplo.java
+│   │   ├── 📄 Main.java
 │   │
 │   ├── 📂 Pilhas
 │       ├── 📄 README.md
-│       ├── 📄 PilhaExemplo.java
+│       ├── 📄 Pilhas.java
 │
 └── 📂 Aplicação-Prática
     ├── 📄 README.md
-    ├── 📄 Solucao.java
+    ├── 📄 AppPratica.java
 ```
 
 ## 📖 Descrição das Pastas

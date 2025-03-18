@@ -133,10 +133,4 @@ Atendendo o cliente Cliente1.
 Fila de atendimento atual: [Cliente2]
 Atendendo o cliente Cliente2.
 Fila de atendimento atual: []
-```
-
----
-
-Este documento forneceu uma visão introdutória sobre estruturas de dados, destacando sua importância na computação e apresentando exemplos práticos de aplicação no mundo real. Nos próximos módulos, exploraremos outras estruturas e seu impacto no desempenho dos programas.
-
----
+``` 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/3. Conceitos-Fundamentais/3. Conceitos-Fundamentais.iml" filepath="$PROJECT_DIR$/3. Conceitos-Fundamentais/3. Conceitos-Fundamentais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4. Estruturas-Lineares/4. Estruturas-Lineares.iml" filepath="$PROJECT_DIR$/4. Estruturas-Lineares/4. Estruturas-Lineares.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EstruturasDeDados.iml" filepath="$PROJECT_DIR$/EstruturasDeDados.iml" />
+    </modules>
+  </component>
+</project>

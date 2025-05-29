@@ -42,5 +42,5 @@ public class Disciplina {
     public void setTurno(String turno) {
         this.turno = turno;
     }
-
+    
 }

@@ -42,27 +42,37 @@ public class Aluno {
 
     public Nota[] getNotasOrdenadasPorValor(boolean crescente) {
         Nota[] notasParaOrdenar = getNotas(); // Pega apenas as notas válidas
-        java.util.Arrays.sort(notasParaOrdenar, new java.util.Comparator<Nota>() {
-            @Override
-            public int compare(Nota n1, Nota n2) {
+        int n = notasParaOrdenar.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                boolean deveTrocar;
                 if (crescente) {
-                    return Double.compare(n1.getNota(), n2.getNota());
+                    deveTrocar = notasParaOrdenar[j].getNota() > notasParaOrdenar[j + 1].getNota();
                 } else {
-                    return Double.compare(n2.getNota(), n1.getNota());
+                    deveTrocar = notasParaOrdenar[j].getNota() < notasParaOrdenar[j + 1].getNota();
+                }
+                if (deveTrocar) {
+                    Nota temp = notasParaOrdenar[j];
+                    notasParaOrdenar[j] = notasParaOrdenar[j + 1];
+                    notasParaOrdenar[j + 1] = temp;
                 }
             }
-        });
+        }
         return notasParaOrdenar;
     }
 
     public Nota[] getNotasOrdenadasPorDisciplina() {
         Nota[] notasParaOrdenar = getNotas(); // Pega apenas as notas válidas
-        java.util.Arrays.sort(notasParaOrdenar, new java.util.Comparator<Nota>() {
-            @Override
-            public int compare(Nota n1, Nota n2) {
-                return n1.getDisciplina().getNome().compareToIgnoreCase(n2.getDisciplina().getNome());
+        int n = notasParaOrdenar.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (notasParaOrdenar[j].getDisciplina().getNome().compareToIgnoreCase(notasParaOrdenar[j + 1].getDisciplina().getNome()) > 0) {
+                    Nota temp = notasParaOrdenar[j];
+                    notasParaOrdenar[j] = notasParaOrdenar[j + 1];
+                    notasParaOrdenar[j + 1] = temp;
+                }
             }
-        });
+        }
         return notasParaOrdenar;
     }
 

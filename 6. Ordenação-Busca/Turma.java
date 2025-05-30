@@ -35,6 +35,18 @@ public class Turma {
         disciplinas[qtdDisciplinas++] = disciplina;
     }
 
+    public void ordenarAlunosPorNome() {
+        for (int i = 0; i < qtdAlunos - 1; i++) {
+            for (int j = 0; j < qtdAlunos - i - 1; j++) {
+                if (alunos[j].getNome().compareToIgnoreCase(alunos[j + 1].getNome()) > 0) {
+                    Aluno temp = alunos[j];
+                    alunos[j] = alunos[j + 1];
+                    alunos[j + 1] = temp;
+                }
+            }
+        }
+    }
+
     public int getId() {
         return id;
     }

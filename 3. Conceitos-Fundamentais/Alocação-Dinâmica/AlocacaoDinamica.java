@@ -6,7 +6,7 @@ class AlocacaoDinamica {
         Scanner scanner = new Scanner(System.in);
 
         // Criando uma lista dinâmica para armazenar alunos
-        ArrayList<Aluno> listaAlunos = new ArrayList<>();
+        ArrayList<Aluno1> listaAlunos = new ArrayList<>();
 
         while (true) {
             System.out.println("\nMenu de Opções:");
@@ -29,7 +29,7 @@ class AlocacaoDinamica {
                     System.out.print("Nota do aluno: ");
                     double nota = scanner.nextDouble();
 
-                    listaAlunos.add(new Aluno(nome, idade, nota));
+                    listaAlunos.add(new Aluno1(nome, idade, nota));
                     System.out.println("Aluno adicionado com sucesso!");
                     break;
 
@@ -76,13 +76,13 @@ class AlocacaoDinamica {
 }
 
 // Classe auxiliar para representar um Aluno
-class Aluno {
+class Aluno1 {
     private String nome;
     private int idade;
     private double nota;
 
     // Construtor para inicializar o aluno
-    public Aluno(String nome, int idade, double nota) {
+    public Aluno1(String nome, int idade, double nota) {
         this.nome = nome;
         this.idade = idade;
         this.nota = nota;

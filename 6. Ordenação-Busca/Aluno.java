@@ -1,11 +1,13 @@
+import java.util.List;
+
 public class Aluno {
     private String nome;
     private int numero_matricula;
     private String nome_turma; // TODO: Criar a classe turma
     private int periodo;
+    private List<Nota> notas ;
 
     public Aluno(){
-
     }
 
     public Aluno(String nome, int numero_matricula, String nome_turma, int periodo) {

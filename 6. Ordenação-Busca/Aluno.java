@@ -40,6 +40,21 @@ public class Aluno {
         return soma / qtdNotas;
     }
 
+    public Nota[] getNotasOrdenadasPorValor(boolean crescente) {
+        Nota[] notasParaOrdenar = getNotas(); // Pega apenas as notas válidas
+        java.util.Arrays.sort(notasParaOrdenar, new java.util.Comparator<Nota>() {
+            @Override
+            public int compare(Nota n1, Nota n2) {
+                if (crescente) {
+                    return Double.compare(n1.getNota(), n2.getNota());
+                } else {
+                    return Double.compare(n2.getNota(), n1.getNota());
+                }
+            }
+        });
+        return notasParaOrdenar;
+    }
+
 
     public Nota[] getNotas() {
         Nota[] notasAtuais = new Nota[qtdNotas];

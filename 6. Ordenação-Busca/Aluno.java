@@ -22,6 +22,15 @@ public class Aluno {
         notas[qtdNotas++] = nota;
     }
 
+    public void exibirNotas() {
+    System.out.println("Notas de " + nome + ":");
+    for (int i = 0; i < qtdNotas; i++) {
+        System.out.println("Disciplina: " + notas[i].getDisciplina().getNome() + 
+                           ", Nota: " + notas[i].getNota());
+        }
+    }
+
+
     public Nota[] getNotas() {
         return notas;
     }

@@ -141,7 +141,7 @@ public class Turma {
         }
     }
 
-     public Aluno[] getAlunosOrdenadosPorMedia(boolean crescente) {
+    public Aluno[] getAlunosOrdenadosPorMedia(boolean crescente) {
         Aluno[] alunosParaOrdenar = getAlunos(); // Pega apenas os alunos válidos
         int n = alunosParaOrdenar.length;
         for (int i = 0; i < n - 1; i++) {

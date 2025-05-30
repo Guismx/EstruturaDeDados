@@ -24,6 +24,17 @@ public class Turma {
         alunos[qtdAlunos++] = aluno;
     }
 
+    public void adicionarDisciplina(Disciplina disciplina) {
+        if (qtdDisciplinas >= disciplinas.length) {
+            Disciplina[] novoArray = new Disciplina[disciplinas.length * 2];
+            for (int i = 0; i < disciplinas.length; i++) {
+                novoArray[i] = disciplinas[i];
+            }
+            disciplinas = novoArray;
+        }
+        disciplinas[qtdDisciplinas++] = disciplina;
+    }
+
     public int getId() {
         return id;
     }

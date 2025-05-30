@@ -5,7 +5,7 @@ public class Aluno {
     private int numero_matricula;
     private Turma nome_turma;
     private int periodo;
-    private List<Nota> notas ;
+    private List<Nota> notas;
 
     public Aluno(){
     }

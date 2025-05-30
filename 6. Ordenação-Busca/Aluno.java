@@ -42,7 +42,11 @@ public class Aluno {
 
 
     public Nota[] getNotas() {
-        return notas;
+        Nota[] notasAtuais = new Nota[qtdNotas];
+        for (int i = 0; i < qtdNotas; i++) {
+            notasAtuais[i] = this.notas[i]; // Copia do array interno this.notas
+        }
+        return notasAtuais;
     }
 
     public String getNome() {

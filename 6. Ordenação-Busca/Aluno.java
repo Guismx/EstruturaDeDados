@@ -3,14 +3,14 @@ import java.util.List;
 public class Aluno {
     private String nome;
     private int numero_matricula;
-    private String nome_turma; // TODO: Criar a classe turma
+    private Turma nome_turma;
     private int periodo;
     private List<Nota> notas ;
 
     public Aluno(){
     }
 
-    public Aluno(String nome, int numero_matricula, String nome_turma, int periodo) {
+    public Aluno(String nome, int numero_matricula, Turma nome_turma, int periodo) {
         this.nome = nome;
         this.numero_matricula = numero_matricula;
         this.nome_turma = nome_turma;
@@ -31,10 +31,10 @@ public class Aluno {
         this.numero_matricula = numero_matricula;
     }
 
-    public String getNome_turma() {
+    public Turma getNome_turma() {
         return nome_turma;
     }
-    public void setNome_turma(String nome_turma) {
+    public void setNome_turma(Turma nome_turma) {
         this.nome_turma = nome_turma;
     }
 

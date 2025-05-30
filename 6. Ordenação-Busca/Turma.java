@@ -47,6 +47,23 @@ public class Turma {
         }
     }
 
+    public Aluno buscarAlunoPorNomeBinaria(String nome) {
+        int inicio = 0;
+        int fim = qtdAlunos - 1;
+        while (inicio <= fim) {
+            int meio = (inicio + fim) / 2;
+            int cmp = alunos[meio].getNome().compareToIgnoreCase(nome);
+            if (cmp == 0) {
+                return alunos[meio];
+            } else if (cmp < 0) {
+                inicio = meio + 1;
+            } else {
+                fim = meio - 1;
+            }
+        }
+        return null;
+    }
+
     public int getId() {
         return id;
     }

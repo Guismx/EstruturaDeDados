@@ -182,7 +182,63 @@ public class Turma {
         }
         return todasNotasArray;
     }
-    
+
+    public Nota[] getTodasNotasDaTurmaOrdenadasPorValor(boolean crescente) {
+        Nota[] todasNotas = getTodasNotasDaTurma();
+        int n = todasNotas.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                boolean deveTrocar;
+                if (crescente) {
+                    deveTrocar = todasNotas[j].getNota() > todasNotas[j + 1].getNota();
+                } else {
+                    deveTrocar = todasNotas[j].getNota() < todasNotas[j + 1].getNota();
+                }
+                if (deveTrocar) {
+                    Nota temp = todasNotas[j];
+                    todasNotas[j] = todasNotas[j + 1];
+                    todasNotas[j + 1] = temp;
+                }
+            }
+        }
+        return todasNotas;
+    }
+
+    public Nota[] getTodasNotasDaTurmaOrdenadasPorDisciplina() {
+        Nota[] todasNotas = getTodasNotasDaTurma();
+        int n = todasNotas.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (todasNotas[j].getDisciplina().getNome().compareToIgnoreCase(todasNotas[j + 1].getDisciplina().getNome()) > 0) {
+                    Nota temp = todasNotas[j];
+                    todasNotas[j] = todasNotas[j + 1];
+                    todasNotas[j + 1] = temp;
+                }
+            }
+        }
+        return todasNotas;
+    }
+
+    public boolean removerAlunoPorMatricula(int matricula) {
+        int indiceRemover = -1;
+        for (int i = 0; i < qtdAlunos; i++) {
+            if (this.alunos[i] != null && this.alunos[i].getNumeroMatricula() == matricula) {
+                indiceRemover = i;
+                break;
+            }
+        }
+
+        if (indiceRemover != -1) {
+            // Deslocar elementos para preencher o espaço
+            for (int i = indiceRemover; i < qtdAlunos - 1; i++) {
+                this.alunos[i] = this.alunos[i + 1];
+            }
+            this.alunos[--qtdAlunos] = null; // Limpar a última posição e decrementar o contador
+            return true;
+        }
+        return false; // Aluno não encontrado
+    }
+
     public Aluno[] getAlunos() {
         Aluno[] alunosAtuais = new Aluno[qtdAlunos];
         for (int i = 0; i < qtdAlunos; i++) {

@@ -127,7 +127,7 @@ public class Turma {
             Aluno a = this.alunos[i];
             if (a != null) {
                 Nota[] notasDoAluno = a.getNotas();
-                for (int k=0; k < notasDoAluno.length; k++) { // Alterado para loop fori
+                for (int k=0; k < notasDoAluno.length; k++) {
                     Nota n = notasDoAluno[k];
                     if (n.getDisciplina().getNome().equalsIgnoreCase(nomeDisciplina)) {
                         System.out.printf("Aluno: %s - Nota: %.2f\n", a.getNome(), n.getNota());
@@ -142,7 +142,7 @@ public class Turma {
     }
 
     public Aluno[] getAlunosOrdenadosPorMedia(boolean crescente) {
-        Aluno[] alunosParaOrdenar = getAlunos(); // Pega apenas os alunos válidos
+        Aluno[] alunosParaOrdenar = getAlunos();
         int n = alunosParaOrdenar.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -229,14 +229,13 @@ public class Turma {
         }
 
         if (indiceRemover != -1) {
-            // Deslocar elementos para preencher o espaço
             for (int i = indiceRemover; i < qtdAlunos - 1; i++) {
                 this.alunos[i] = this.alunos[i + 1];
             }
-            this.alunos[--qtdAlunos] = null; // Limpar a última posição e decrementar o contador
+            this.alunos[--qtdAlunos] = null;
             return true;
         }
-        return false; // Aluno não encontrado
+        return false;
     }
 
     public Aluno[] getAlunos() {

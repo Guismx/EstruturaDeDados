@@ -1,16 +1,12 @@
 public class Disciplina {
     private String nome;
-    private int cod_disciplina;
+    private int codigo;
     private String professor;
     private String turno;
 
-    public Disciplina() {
-
-    }
-
-    public Disciplina(String nome, int cod_disciplina, String professor, String turno) {
+    public Disciplina(String nome, int codigo, String professor, String turno) {
         this.nome = nome;
-        this.cod_disciplina = cod_disciplina;
+        this.codigo = codigo;
         this.professor = professor;
         this.turno = turno;
     }
@@ -22,11 +18,11 @@ public class Disciplina {
         this.nome = nome;
     }
 
-    public int getCod_disciplina() {
-        return cod_disciplina;
+    public int getCodigo() {
+        return codigo;
     }
-    public void setCod_disciplina(int cod_disciplina) {
-        this.cod_disciplina = cod_disciplina;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getProfessor() {

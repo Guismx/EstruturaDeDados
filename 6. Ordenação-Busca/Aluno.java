@@ -30,6 +30,16 @@ public class Aluno {
         }
     }
 
+    public double calcularMedia() {
+        if (qtdNotas == 0) return 0.0;
+
+        double soma = 0.0;
+        for (int i = 0; i < qtdNotas; i++) {
+            soma += notas[i].getNota();
+        }
+        return soma / qtdNotas;
+    }
+
 
     public Nota[] getNotas() {
         return notas;

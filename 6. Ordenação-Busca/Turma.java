@@ -81,6 +81,36 @@ public class Turma {
         }
     }
 
+    public void listarAlunosPorFaixaDeMedia(double min, double max) {
+    System.out.println("Alunos com média entre " + min + " e " + max + ":");
+        for (int i = 0; i < qtdAlunos; i++) {
+            Aluno a = alunos[i];
+            if (a != null) {
+                double media = a.calcularMedia();
+                if (media >= min && media <= max) {
+                    System.out.printf("Matrícula: %d, Nome: %s, Média: %.2f\n",
+                        a.getNumeroMatricula(), a.getNome(), media);
+                }
+            }
+        }
+    }
+
+    public void visualizarNotasPorDisciplina(String nomeDisciplina) {
+    System.out.println("Notas da disciplina: " + nomeDisciplina);
+        for (int i = 0; i < qtdAlunos; i++) {
+            Aluno a = alunos[i];
+            Nota[] notas = a.getNotas(); // Supondo que isso existe
+            for (int j = 0; j < notas.length; j++) {
+                Nota n = notas[j];
+                if (n != null && n.getDisciplina().getNome().equalsIgnoreCase(nomeDisciplina)) {
+                    System.out.printf("Aluno: %s - Nota: %.2f\n", a.getNome(), n.getNota());
+                }
+            }
+        }
+    }
+
+
+
     public int getId() {
         return id;
     }

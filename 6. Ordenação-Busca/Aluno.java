@@ -55,6 +55,17 @@ public class Aluno {
         return notasParaOrdenar;
     }
 
+    public Nota[] getNotasOrdenadasPorDisciplina() {
+        Nota[] notasParaOrdenar = getNotas(); // Pega apenas as notas válidas
+        java.util.Arrays.sort(notasParaOrdenar, new java.util.Comparator<Nota>() {
+            @Override
+            public int compare(Nota n1, Nota n2) {
+                return n1.getDisciplina().getNome().compareToIgnoreCase(n2.getDisciplina().getNome());
+            }
+        });
+        return notasParaOrdenar;
+    }
+
 
     public Nota[] getNotas() {
         Nota[] notasAtuais = new Nota[qtdNotas];

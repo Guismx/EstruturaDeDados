@@ -141,6 +141,50 @@ public class Turma {
         }
     }
 
+     public Aluno[] getAlunosOrdenadosPorMedia(boolean crescente) {
+        Aluno[] alunosParaOrdenar = getAlunos(); // Pega apenas os alunos válidos
+        int n = alunosParaOrdenar.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                boolean deveTrocar;
+                if (crescente) {
+                    deveTrocar = alunosParaOrdenar[j].calcularMedia() > alunosParaOrdenar[j + 1].calcularMedia();
+                } else {
+                    deveTrocar = alunosParaOrdenar[j].calcularMedia() < alunosParaOrdenar[j + 1].calcularMedia();
+                }
+                if (deveTrocar) {
+                    Aluno temp = alunosParaOrdenar[j];
+                    alunosParaOrdenar[j] = alunosParaOrdenar[j + 1];
+                    alunosParaOrdenar[j + 1] = temp;
+                }
+            }
+        }
+        return alunosParaOrdenar;
+    }
+
+
+    public Aluno[] getAlunos() {
+        Aluno[] alunosAtuais = new Aluno[qtdAlunos];
+        for (int i = 0; i < qtdAlunos; i++) {
+            alunosAtuais[i] = this.alunos[i];
+        }
+        return alunosAtuais;
+    }
+    public void setAlunos(Aluno[] alunos) {
+        this.alunos = alunos;
+    }
+
+    public Disciplina[] getDisciplinas() {
+        Disciplina[] disciplinasAtuais = new Disciplina[qtdDisciplinas];
+        for (int i = 0; i < qtdDisciplinas; i++) {
+            disciplinasAtuais[i] = this.disciplinas[i];
+        }
+        return disciplinasAtuais;
+    }
+    public int getQtdDisciplinas() {
+        return qtdDisciplinas;
+    }
+
     public int getId() {
         return id;
     }
@@ -161,25 +205,10 @@ public class Turma {
     public void setAno(int ano) {
         this.ano = ano;
     }
-
-    public Aluno[] getAlunos() {
-        return alunos;
-    }
-    public void setAlunos(Aluno[] alunos) {
-        this.alunos = alunos;
-    }
-
     public int getQtdAlunos() {
         return qtdAlunos;
     }
     public void setQtdAlunos(int qtdAlunos) {
         this.qtdAlunos = qtdAlunos;
-    }
-
-    public Disciplina[] getDisciplinas() {
-        return disciplinas;
-    }
-    public int getQtdDisciplinas() {
-        return qtdDisciplinas;
     }
 }

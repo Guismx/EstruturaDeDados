@@ -162,7 +162,27 @@ public class Turma {
         return alunosParaOrdenar;
     }
 
+    public Nota[] getTodasNotasDaTurma() {
+        int totalNotas = 0;
+        for (int i = 0; i < qtdAlunos; i++) {
+            if (this.alunos[i] != null) {
+                totalNotas += this.alunos[i].getQtdNotas();
+            }
+        }
 
+        Nota[] todasNotasArray = new Nota[totalNotas];
+        int indiceAtual = 0;
+        for (int i = 0; i < qtdAlunos; i++) {
+            if (this.alunos[i] != null) {
+                Nota[] notasDoAluno = this.alunos[i].getNotas();
+                for (int j = 0; j < notasDoAluno.length; j++) {
+                    todasNotasArray[indiceAtual++] = notasDoAluno[j];
+                }
+            }
+        }
+        return todasNotasArray;
+    }
+    
     public Aluno[] getAlunos() {
         Aluno[] alunosAtuais = new Aluno[qtdAlunos];
         for (int i = 0; i < qtdAlunos; i++) {

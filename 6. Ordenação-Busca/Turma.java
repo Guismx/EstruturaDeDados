@@ -1,14 +1,18 @@
 public class Turma {
-    private Long id;
+    private int id;
     private String nome;
     private int ano;
-    private Aluno[] alunos = new Aluno[10];
+    private Aluno[] alunos;
     private int qtdAlunos = 0;
+    private Disciplina[] disciplinas;
+    private int qtdDisciplinas;
 
-    public Turma(Long id, String nome, int ano) {
+    public Turma(int id, String nome, int ano, int capacidadeAlunos, int capacidadeDisciplinas) {
         this.id = id;
         this.nome = nome;
         this.ano = ano;
+        this.alunos = new Aluno[capacidadeAlunos];
+        this.disciplinas = new Disciplina[capacidadeDisciplinas];
     }
 
     public void adicionarAluno(Aluno aluno) {
@@ -20,10 +24,10 @@ public class Turma {
         alunos[qtdAlunos++] = aluno;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -53,5 +57,12 @@ public class Turma {
     }
     public void setQtdAlunos(int qtdAlunos) {
         this.qtdAlunos = qtdAlunos;
+    }
+
+    public Disciplina[] getDisciplinas() {
+        return disciplinas;
+    }
+    public int getQtdDisciplinas() {
+        return qtdDisciplinas;
     }
 }

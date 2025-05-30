@@ -1,7 +1,5 @@
-import java.math.BigDecimal;
-
 public class Nota {
-    private BigDecimal nota;
+    private double nota;
     private Aluno aluno;
     private Disciplina disciplina;
     
@@ -9,16 +7,16 @@ public class Nota {
 
     }
 
-    public Nota(BigDecimal nota, Aluno aluno, Disciplina disciplina) {
-        this.nota = BigDecimal.ZERO;
+    public Nota(double nota, Aluno aluno, Disciplina disciplina) {
+        this.nota = nota;
         this.aluno = aluno;
         this.disciplina = disciplina;
     }
     
-    public BigDecimal getNota() {
+    public double getNota() {
         return nota;
     }
-    public void setNota(BigDecimal nota) {
+    public void setNota(double nota) {
         this.nota = nota;
     }
 

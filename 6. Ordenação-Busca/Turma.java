@@ -73,6 +73,13 @@ public class Turma {
         }
     }
 
+    public void exibirAlunos() {
+    System.out.println("Alunos da Turma " + nome + ":");
+    for (int i = 0; i < qtdAlunos; i++) {
+        System.out.println("Matrícula: " + alunos[i].getNumeroMatricula() +
+                           ", Nome: " + alunos[i].getNome());
+        }
+    }
 
     public int getId() {
         return id;

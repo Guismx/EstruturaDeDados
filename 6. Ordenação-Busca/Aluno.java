@@ -9,8 +9,8 @@ public class Aluno {
         this.nome = nome;
         this.numeroMatricula = numeroMatricula;
         this.turma = turma;
-        int quantidadeDisciplinas = turma.getQtdDisciplinas();
-        this.notas = new Nota[quantidadeDisciplinas];
+        this.notas = new Nota[10];
+        this.qtdNotas = 0;
     }
 
     public void adicionarNota(Nota nota) {
@@ -45,5 +45,8 @@ public class Aluno {
 
     public Turma getTurma() {
         return turma;
+    }
+    public int getQtdNotas() {
+        return qtdNotas;
     }
 }

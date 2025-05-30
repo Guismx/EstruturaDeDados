@@ -24,6 +24,63 @@ public class Turma {
         alunos[qtdAlunos++] = aluno;
     }
 
+    public void adicionarDisciplina(Disciplina disciplina) {
+        if (qtdDisciplinas >= disciplinas.length) {
+            Disciplina[] novoArray = new Disciplina[disciplinas.length * 2];
+            for (int i = 0; i < disciplinas.length; i++) {
+                novoArray[i] = disciplinas[i];
+            }
+            disciplinas = novoArray;
+        }
+        disciplinas[qtdDisciplinas++] = disciplina;
+    }
+
+    public void ordenarAlunosPorNome() {
+        for (int i = 0; i < qtdAlunos - 1; i++) {
+            for (int j = 0; j < qtdAlunos - i - 1; j++) {
+                if (alunos[j].getNome().compareToIgnoreCase(alunos[j + 1].getNome()) > 0) {
+                    Aluno temp = alunos[j];
+                    alunos[j] = alunos[j + 1];
+                    alunos[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public Aluno buscarAlunoPorNomeBinaria(String nome) {
+        int inicio = 0;
+        int fim = qtdAlunos - 1;
+        while (inicio <= fim) {
+            int meio = (inicio + fim) / 2;
+            int cmp = alunos[meio].getNome().compareToIgnoreCase(nome);
+            if (cmp == 0) {
+                return alunos[meio];
+            } else if (cmp < 0) {
+                inicio = meio + 1;
+            } else {
+                fim = meio - 1;
+            }
+        }
+        return null;
+    }
+
+    public void exibirDisciplinas() {
+    System.out.println("Disciplinas da Turma " + nome + ":");
+    for (int i = 0; i < qtdDisciplinas; i++) {
+        System.out.println("Disciplina: " + disciplinas[i].getNome() + 
+                           ", Professor: " + disciplinas[i].getProfessor() +
+                           ", Turno: " + disciplinas[i].getTurno());
+        }
+    }
+
+    public void exibirAlunos() {
+    System.out.println("Alunos da Turma " + nome + ":");
+    for (int i = 0; i < qtdAlunos; i++) {
+        System.out.println("Matrícula: " + alunos[i].getNumeroMatricula() +
+                           ", Nome: " + alunos[i].getNome());
+        }
+    }
+
     public int getId() {
         return id;
     }

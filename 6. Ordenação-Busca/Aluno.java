@@ -2,15 +2,15 @@ public class Aluno {
     private String nome;
     private int numeroMatricula;
     private Turma turma;
-    private int periodo;
-    private Nota[] notas = new Nota[20];
+    private Nota[] notas;
     private int qtdNotas = 0;
 
-    public Aluno(String nome, int numeroMatricula, Turma turma, int periodo) {
+    public Aluno(String nome, int numeroMatricula, Turma turma) {
         this.nome = nome;
         this.numeroMatricula = numeroMatricula;
         this.turma = turma;
-        this.periodo = periodo;
+        int quantidadeDisciplinas = turma.getQtdDisciplinas();
+        this.notas = new Nota[quantidadeDisciplinas];
     }
 
     public void adicionarNota(Nota nota) {
@@ -36,9 +36,5 @@ public class Aluno {
 
     public Turma getTurma() {
         return turma;
-    }
-
-    public int getPeriodo() {
-        return periodo;
     }
 }

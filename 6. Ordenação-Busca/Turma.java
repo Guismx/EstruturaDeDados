@@ -5,7 +5,7 @@ public class Turma {
     private Aluno[] alunos;
     private int qtdAlunos = 0;
     private Disciplina[] disciplinas;
-    private int qtdDisciplinas;
+    private int qtdDisciplinas = 0;
 
     public Turma(int id, String nome, int ano, int capacidadeAlunos, int capacidadeDisciplinas) {
         this.id = id;
@@ -13,6 +13,8 @@ public class Turma {
         this.ano = ano;
         this.alunos = new Aluno[capacidadeAlunos];
         this.disciplinas = new Disciplina[capacidadeDisciplinas];
+        this.qtdAlunos = 0;
+        this.qtdDisciplinas = 0;
     }
 
     public void adicionarAluno(Aluno aluno) {
@@ -38,10 +40,11 @@ public class Turma {
     public void ordenarAlunosPorNome() {
         for (int i = 0; i < qtdAlunos - 1; i++) {
             for (int j = 0; j < qtdAlunos - i - 1; j++) {
-                if (alunos[j].getNome().compareToIgnoreCase(alunos[j + 1].getNome()) > 0) {
-                    Aluno temp = alunos[j];
-                    alunos[j] = alunos[j + 1];
-                    alunos[j + 1] = temp;
+                if (this.alunos[j] != null && this.alunos[j+1] != null &&
+                    this.alunos[j].getNome().compareToIgnoreCase(this.alunos[j + 1].getNome()) > 0) {
+                    Aluno temp = this.alunos[j];
+                    this.alunos[j] = this.alunos[j + 1];
+                    this.alunos[j + 1] = temp;
                 }
             }
         }
@@ -99,7 +102,7 @@ public class Turma {
     System.out.println("Notas da disciplina: " + nomeDisciplina);
         for (int i = 0; i < qtdAlunos; i++) {
             Aluno a = alunos[i];
-            Nota[] notas = a.getNotas(); // Supondo que isso existe
+            Nota[] notas = a.getNotas();
             for (int j = 0; j < notas.length; j++) {
                 Nota n = notas[j];
                 if (n != null && n.getDisciplina().getNome().equalsIgnoreCase(nomeDisciplina)) {

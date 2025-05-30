@@ -41,7 +41,7 @@ public class Aluno {
     }
 
     public Nota[] getNotasOrdenadasPorValor(boolean crescente) {
-        Nota[] notasParaOrdenar = getNotas(); // Pega apenas as notas válidas
+        Nota[] notasParaOrdenar = getNotas();
         int n = notasParaOrdenar.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -62,7 +62,7 @@ public class Aluno {
     }
 
     public Nota[] getNotasOrdenadasPorDisciplina() {
-        Nota[] notasParaOrdenar = getNotas(); // Pega apenas as notas válidas
+        Nota[] notasParaOrdenar = getNotas();
         int n = notasParaOrdenar.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -80,7 +80,7 @@ public class Aluno {
     public Nota[] getNotas() {
         Nota[] notasAtuais = new Nota[qtdNotas];
         for (int i = 0; i < qtdNotas; i++) {
-            notasAtuais[i] = this.notas[i]; // Copia do array interno this.notas
+            notasAtuais[i] = this.notas[i]; 
         }
         return notasAtuais;
     }

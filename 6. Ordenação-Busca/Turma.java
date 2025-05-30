@@ -64,6 +64,16 @@ public class Turma {
         return null;
     }
 
+    public void exibirDisciplinas() {
+    System.out.println("Disciplinas da Turma " + nome + ":");
+    for (int i = 0; i < qtdDisciplinas; i++) {
+        System.out.println("Disciplina: " + disciplinas[i].getNome() + 
+                           ", Professor: " + disciplinas[i].getProfessor() +
+                           ", Turno: " + disciplinas[i].getTurno());
+        }
+    }
+
+
     public int getId() {
         return id;
     }

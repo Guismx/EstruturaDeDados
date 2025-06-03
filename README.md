@@ -38,9 +38,18 @@ Este repositório contém exemplos práticos e explicações sobre estruturas de
 │       ├── 📄 README.md
 │       ├── 📄 Pilhas.java
 │
-└── 📂 Aplicação-Prática
+├── 📂 Aplicação-Prática
+│   ├── 📄 README.md
+│   ├── 📄 AppPratica.java
+│
+└── 📂 Ordenacao-Busca
+    ├── 📄 Aluno.java
+    ├── 📄 Disciplina.java
+    ├── 📄 Main.java
+    ├── 📄 Nota.java
     ├── 📄 README.md
-    ├── 📄 AppPratica.java
+    └── 📄 Turma.java
+
 ```
 
 ## 📖 Descrição das Pastas
